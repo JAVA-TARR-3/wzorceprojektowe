@@ -12,9 +12,14 @@ public class DekoratorProgram {
         napoj2 = new Cukier(napoj2);
         napoj2 = new Mleko(napoj2);
         print(napoj2);
+
+        Napoj napoj3 = new Mleko(new Cukier(new Cukier(new Kawa())));
+        print(napoj3);
     }
 
     private static void print(Napoj napoj) {
         System.out.println(napoj.getOpis() + " " + napoj.getKoszt() + " zł");
     }
+
+
 }
